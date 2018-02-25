@@ -1,0 +1,266 @@
+$white: #f4f5f6;
+$yellowish: #eafc40;
+$bg: #286DA8;
+@mixin flex {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+html,body {
+  /* REM reset for easier calculation */
+  font-size: 10px;
+  height: 100%;
+  width: 100%;
+  min-width: 325px;
+  font-family: 'Raleway', sans-serif;
+  background: $white;
+}
+header {
+  height: 100vh;
+  width: 100%;
+  background: #286BA8;
+  position: relative;
+  display: inline-block;
+  .nav, .mobileNav {
+    height: 5rem;
+    width: 100%;
+    padding: .5rem;
+    position: fixed;
+    z-index: 999;
+    transition: all 0.3s;
+    a, i {
+      text-decoration: none;
+      color: $white;
+      font-size: 2rem;
+      margin: 1.5rem;
+      display: inline-block;
+      &:hover {
+        color: $yellowish;
+      }
+    }
+  }
+  /*A little cheating, not the best solution*/
+  .nav {
+    a:nth-child(even) {
+      float:right;
+    }
+    a:nth-child(2) {
+      margin-right: 3rem;
+    }
+  }
+  .headerInfo {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 13vh;
+    div img {
+      height: 75vh;
+    }
+    h1,h2{
+      color: $white;
+    }
+    span {
+      color: $yellowish;
+    }
+  }
+}
+.clearfix {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.mobileNav {
+  display:none;
+  i {
+    cursor: pointer;
+  }
+}
+.mobileNavMenu {
+  width: 100%;
+  background: #286BA8;
+  a {
+    width: 100%;
+  }
+}
+.scrolled {
+  background: #2b2b3a;
+  border-bottom: 1px solid $white;
+  box-shadow: 0px 2px 10px black;
+  transition: all 0.3s;
+  a, i {
+    color: $white;
+  }
+}
+#aboutMe {
+  background: $white;
+  margin: 5rem;
+  h1{
+    text-align:center;
+    color: #254558;
+  }
+}
+.branch {
+  background: $bg;
+  margin: 0.5rem 2rem 0.5rem 1rem;
+  border: 1px solid #CD5360;
+  border-top-left-radius: 2.7rem;
+  border-bottom-left-radius: 2.7rem;
+  padding: .4rem;
+  padding-left: 6rem;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.1s;
+  box-shadow: 2px 2px 2px black;
+  h2, h3 {
+    color: $white;
+  }
+  &:nth-child(2){
+    margin-top: 2rem;
+  }
+  &:hover .circle{
+    border-color: $yellowish;
+  }
+  div ul{
+    padding-left: 0;
+    li {
+      margin: 1rem;
+      color: $white;
+      font-size: 1.4rem;
+    }
+    ul, h2 {
+      padding-left: 3rem;
+    }
+  }
+  .descr {
+    display: none;
+  }
+}
+.circle {
+  height: 1rem;
+  padding: 1rem;
+  background: $bg;
+  border: 10px solid $white;
+  width: 1rem;
+  position: absolute;
+  border-radius: 100%;
+  left: 0;
+  top: 0;
+  transition: all 0.3s;
+}
+.openedAbout {
+  border-bottom-left-radius: 0;
+}
+
+#portfolio {
+  background: #2b2b3a;
+  box-sizing: border-box;
+  h1 {
+    color: $yellowish;
+    text-align: center;
+    padding: 5rem;
+  }
+  .projectsContainer {
+    @include flex;
+    .project {
+      margin: 1.5rem;
+      width: 25rem;
+      height: 20rem;
+      background: #254558;
+      border: 5px solid #f4f5f6;
+      box-shadow: 0px 0px 15px black;
+      cursor: pointer;
+      position: relative;
+
+      &:hover::before {
+        content: "\1F517";
+        font-size: 6rem;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: black;
+        opacity: 0.5;
+        display:flex;
+        flex-direction:row;
+        align-items: center;
+        justify-content: center;
+      }
+      img {
+        width: 100%;
+        height: 70%;
+      }
+      h2 {
+        color: $white;
+        text-align: center;   
+        span {
+          color: $yellowish;
+        }
+      }
+
+    }
+  }
+}
+#contact {
+  background: $white;
+  margin: 4rem;
+  position: relative;
+  h1,h2 {
+    color: #254558;
+    text-align:center;
+  }
+  .social {
+    @include flex;
+    font-size: 5rem;
+    margin: 3rem;
+
+    #emailTxt {
+      display: none;
+      position: absolute;
+      bottom:-6rem;
+      font-size: 2rem;
+    }
+    a {
+      text-decoration:none;
+      opacity: 0.5;
+      margin: auto;
+      transition: all 0.3s;
+      cursor: pointer;
+      &:nth-child(1), &:nth-child(4){
+        color: #3b5998;
+      }
+      &:nth-child(2){
+        color: darkgreen;
+      }
+      &:nth-child(3){
+        color:#24292e;
+      }
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+footer  { 
+  box-sizing: border-box;
+  height: auto;
+  height: 3.5rem;
+  width: 100%;
+  font-size: 1.3rem;
+  text-align:center;
+  margin-top:8rem;
+}
+@media (max-width: 455px){
+  .mobileNav {
+    display: inline-block;
+  }
+  .mobileNavMenu {
+    display: none;
+  }
+  .nav {
+    display: none;
+  }
+  #aboutMe {
+    margin: 5rem 2rem;
+  }
+}

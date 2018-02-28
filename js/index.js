@@ -9,7 +9,7 @@ $(document).ready(function(){
   }
   const ids = [$("#jsCalculator"),$("#pomodoroClock"),$("#quoteMachine"),$("#tributePage"),$("#pixelArtMaker"),$("#localWeather"),$("#portfolio1"),$("#twitchTv"),$("#wikiViewer"),$("#jsClock"),$("#socialBtnPrj"),$("#ticTacToe"),$("#simonGame")];
   const links = ["https://codepen.io/cristianbenchea781/full/YraGbg/", "https://codepen.io/cristianbenchea781/full/jGJweR/", "https://codepen.io/cristianbenchea781/full/KXwrGG/", "https://codepen.io/cristianbenchea781/full/MvrOOz/", "https://codepen.io/cristianbenchea781/full/YYvVjL/", "https://codepen.io/cristianbenchea781/full/bodmxV/", "https://codepen.io/cristianbenchea781/full/PKRzEN/", "https://codepen.io/cristianbenchea781/full/EwgEvg/", "https://codepen.io/cristianbenchea781/full/QqNEev/", "https://codepen.io/cristianbenchea781/full/JrOLwL/", "https://codepen.io/cristianbenchea781/full/rJJQKL/", "https://codepen.io/cristianbenchea781/full/eVvZYe/", "https://codepen.io/cristianbenchea781/full/oEyKOE/"];
-  for(let i = 0; i < ids.length; i++){
+  for(var i = 0; i < ids.length; i++){
     goTo(ids[i], links[i]);
   }
   

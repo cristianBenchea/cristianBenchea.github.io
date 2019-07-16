@@ -1,3 +1,9 @@
+body {
+  background-color:black;
+  display:flex;
+  justify-content:center;
+}
+/*
 html, body {
   /* REM reset for easier calculation */
   font-size: 10px;
@@ -261,3 +267,4 @@ footer {
 
   #aboutMe {
     margin: 5rem 2rem; } }
+*/
